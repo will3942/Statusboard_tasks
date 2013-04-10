@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tasks ~ Admin</title>
+	</head>
+	<body>
+		<h1>Welcome to tasks admin.</h1><br />
+		<hr>
+		<h3>Projects:</h3><br />
+		<a href="/admin/project/create">New project</a><br />
+		<ul>
+		<% @projects.each do |project| %>
+			<li><button onclick="location.href='/admin/project/<%= project.id %>/delete'">X</button>&nbsp;<a href="/admin/project/<%= project.id %>/view"><%= project.name %></a></li>
+		<% end %>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tasks ~ Project</title>
+	</head>
+	<body>
+		<h3>Tasks for project: <%= @project.name %></h3><br />
+		<p>Link for panic statusboard: <a href="/<%= @project.id %>/tasks">IPADDRESS/<%= @project.id %>/tasks</a>
+		<hr>
+		<a href="/admin/<%= @project.id %>/task/create">New task</a><br />
+		<ul>
+		<% @tasks.each do |task| %>
+			<li><button onclick="location.href='/admin/task/<%= task.id %>/delete'">X</button>&nbsp;<a href="/admin/task/<%= task.id %>"><%= task.name %></a></li>
+		<% end %>
+		</ul>
+	</body>
+</html>

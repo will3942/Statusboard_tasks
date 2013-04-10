@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<td><h1><%= @project.name %></h1></td>
+		<td style="width:20px" ></td>
+	</tr>
+	<% @tasks.each do |task| %>
+	<tr>
+		<td><%= task.name %></td>
+		<td style="width:20px" class="projectsBars">
+			<div class="barSegment <%= task.status %>"></div>
+		</td>
+	</tr>
+	<% end %>
+</table>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tasks ~ Admin</title>
+	</head>
+	<body>
+		<h1>Welcome to tasks admin.</h1><br />
+		<hr>
+		<h3>Editing task: <%= @task.name %></h3><br />
+		<form action="/admin/task/<%= @task.id %>/update" method="post">
+			<label>Name: </label><input type="text" name="task_name" value="<%= @task.name %>" /><br />
+			<label>Status: </label><input class="radio" type="radio" name="task_status" value="no" <%= "checked" if @task.status == "value1" %> /><span>Not started</span><input class="radio" type="radio" name="task_status" value="progress" <%= "checked" if @task.status == "value4" %> /><span>In Progress</span><input class="radio" type="radio" name="task_status" value="done" <%= "checked" if @task.status == "value8" %>/><span>Done</span><br />
+			<input type="submit" value="save" />
+		</form>	
+	</body>
+</html>
